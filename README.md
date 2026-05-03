@@ -1,6 +1,25 @@
 # Claude Code Skill Templates
 
-Skill templates and conventions for Claude Code, distilled from production use across solo-operator workflows.
+> Skill templates and four conventions for Claude Code — distilled from running ~25 skills in production for several months as a solo operator.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+[![Compatible: Claude Code](https://img.shields.io/badge/Compatible-Claude_Code-orange.svg)](https://claude.com/claude-code)
+
+---
+
+## TL;DR
+
+Skill collections rot fast without conventions. Within a few weeks of building skills informally, you end up with overlapping outputs, inconsistent naming, and unmaintained brand voice handling.
+
+This repo defines four conventions:
+1. **Slash naming:** `/<lowercase-no-hyphen>`, max 15 chars
+2. **Brand-voice pre-flight:** any skill producing external text loads a defined voice file
+3. **Output paths:** every skill writes to a defined path with `YYYY-MM-DD-title.md` filenames
+4. **Conflict handling:** check naming collisions before adding; document SKIP decisions
+
+Plus three production-tested skill templates (doku, textcheck, research) you can adapt.
+
+---
 
 This repo is for anyone building [Claude Code](https://claude.com/claude-code) skills who has noticed that ad-hoc skills accumulate inconsistency: different output paths, different naming conventions, different ways of handling brand voice, different conflict-resolution patterns. This is the small set of conventions that makes a skill collection feel like a system instead of a junk drawer.
 
@@ -45,6 +64,21 @@ Details in [`conventions.md`](./conventions.md).
 
 [MIT](./LICENSE) — use, modify, redistribute freely.
 
+## Roadmap
+
+- [ ] More skill templates (e.g. linkedin-post, email-draft, contract-review, decision-framework)
+- [ ] Migration guide: from ad-hoc skills to convention-compliant skills
+- [ ] Skill-validation tool (CLI that checks a SKILL.md file against conventions)
+- [ ] Multi-agent skill patterns (skills that orchestrate other skills)
+
+Issues and pull requests welcome — see [Contributing](./CONTRIBUTING.md).
+
+## Contributing
+
+Real production-tested skill templates are the most valuable contribution. See [CONTRIBUTING.md](./CONTRIBUTING.md).
+
 ## Maintainer
 
-Built and maintained by [Dirk Häger](https://github.com/dirktbilisi) — independent learning architect at [focusinstitute.io](https://focusinstitute.io)
+Built and maintained by [**Dirk Häger**](https://github.com/dirktbilisi) — independent learning architect at [focusinstitute.io](https://focusinstitute.io) · [LinkedIn](https://www.linkedin.com/in/dirkhaeger/)
+
+If this saves you skill-collection chaos, ⭐ star the repo or share with someone running their own Claude Code setup.
